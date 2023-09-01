@@ -1,13 +1,23 @@
+import React, { useState, useEffect } from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import Logo from "../img/logo.svg";
 import Pizza from "./Pizza";
-import React from "react";
-import { NavLink, Link, useLocation } from "react-router-dom";
-export default function Home() {
+
+const Home = () => {
+  const [basketTotal, setBasketTotal] = useState(0);
+
+  useEffect(() => {
+    const arr = JSON.parse(localStorage.getItem("basket")) || [];
+    const totalSum = arr.reduce((sum, item) => sum + item.price * item.son, 0);
+    setBasketTotal(totalSum);
+  }, []);
+
   function useQuery() {
     const { search } = useLocation();
 
     return React.useMemo(() => new URLSearchParams(search), [search]);
   }
+
   let query = useQuery();
   const types = {
     all: "Barchasi",
@@ -16,16 +26,22 @@ export default function Home() {
     spicy: "Achchiq",
     grib: "Qo'ziqorinli",
   };
+
+  const updateBasketTotal = () => {
+    const arr = JSON.parse(localStorage.getItem("basket")) || [];
+    const totalSum = arr.reduce((sum, item) => sum + item.price * item.son, 0);
+    setBasketTotal(totalSum);
+  };
+
   return (
     <div>
-      
       <div className="Navbar">
         <div className="logo">
           <img src={Logo} alt="" />
         </div>
         <input className="search" type="text" placeholder="Pitsani qidirish" />
         <Link to="/korzinka" className="korzinka-button">
-          0 so'm | savat
+          {basketTotal ? basketTotal + ",000|" : " "}savat
         </Link>
       </div>
       <div className="pizzas">
@@ -40,9 +56,14 @@ export default function Home() {
           {query.get("type") ? types[query.get("type")] : types.all}
         </h1>
         <div className="pitsas">
-          <Pizza type={query.get("type")} />
+          <Pizza
+            type={query.get("type")}
+            updateBasketTotal={updateBasketTotal}
+          />
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Home;

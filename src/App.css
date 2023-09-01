@@ -154,7 +154,6 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
 }
 
 .modal-content {
@@ -163,7 +162,8 @@
   border-radius: 8px;
   text-align: center;
   width: 750px;
-  height: 450px;
+  height: 400px;
+  padding: 50px;
 }
 .modaltop {
   width: 100%;
@@ -172,14 +172,24 @@
   justify-content: start;
   align-items: center;
 }
+.modalmain {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+.mright {
+  width: 50%;
+  height: 100%;
+}
 .modalimg {
-  width: 300px;
+  width: 50%;
   height: 300px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 90%;
   margin-bottom: 10px;
-  clip-path: circle(55);
+  clip-path: circle(40);
 
+  margin-left: -10px;
   animation: rotation 25s infinite linear;
 }
 
@@ -194,4 +204,106 @@
 
 .modalButton:hover {
   background-color: #d32f2f;
+}
+
+.modaltitle {
+  text-align: start;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Roboto;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.modaldescp {
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #828282;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 50px; /* 112.5% */
+}
+
+.mright > h3 {
+  display: flex;
+  width: 120.2px;
+  height: 23px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Roboto;
+  font-size: 18.72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.sonblock {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 100px;
+  border: 1px solid #f4f4f4;
+  background: #f4f4f4;
+}
+.modalbutton {
+  border-radius: 100px;
+  background: #fff;
+  border: none;
+  width: 35px;
+  height: 25px;
+  margin-top: -5px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.06);
+}
+.modal.narx {
+  display: flex;
+  width: 112.606px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+.savatga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 30.719px 15px 29px;
+  align-items: flex-start;
+  border-radius: 100px;
+  background: #006f4c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 500ms all;
+}
+
+.savatga:hover {
+  width: 60%;
+  background: #00583f;
+}
+.modalbottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 20px 0;
 }

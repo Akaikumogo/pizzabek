@@ -144,7 +144,11 @@ function Pizza({ type }) {
             })
         : pitsa.map((item) => {
             return (
-              <div className="card" key={item.id}>
+              <div
+                className="card"
+                key={item.id}
+                onClick={() => openModal(item.id)}
+              >
                 <div className="image">
                   <img className="pitsaimg" src={item.image} alt="" />
                 </div>
@@ -168,6 +172,7 @@ function Pizza({ type }) {
           title={pitsa[openModalId - 1].title}
           description={pitsa[openModalId - 1].description}
           price={pitsa[openModalId - 1].price}
+          id={pitsa[openModalId - 1].id}
         />
       )}
     </>
