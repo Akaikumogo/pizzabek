@@ -90,6 +90,7 @@ function Pizza({ type }) {
   const closeModal = () => {
     setOpenModalId(null);
   };
+  
 
   return (
     <>
@@ -111,6 +112,7 @@ function Pizza({ type }) {
                     <div className="price-back">
                       <div className="price">
                         {item.price},000 <span className="uzs">UZS</span>
+                        <button></button>
                       </div>
                     </div>
                     <div className="basket"></div>
@@ -158,6 +160,7 @@ function Pizza({ type }) {
                   <div className="price-back">
                     <div className="price">
                       {item.price},000 <span className="uzs">UZS</span>
+                      <button></button>
                     </div>
                   </div>
                   <div className="basket"></div>

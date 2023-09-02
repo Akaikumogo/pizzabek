@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 const Modal = ({ onClose, id, image, title, price, description }) => {
   const [son, setSon] = useState(1);
   const [basketTotal, setBasketTotal] = useState(0);
-
-  useEffect(() => {
+  () => {
     const arr = JSON.parse(localStorage.getItem("basket")) || [];
     const totalSum = arr.reduce((sum, item) => sum + item.price * item.son, 0);
     setBasketTotal(totalSum);
+  };
+  useEffect(() => {
+    basketTotal;
   }, []);
 
   const plus = () => {
@@ -22,7 +24,8 @@ const Modal = ({ onClose, id, image, title, price, description }) => {
     }
   };
 
-  const savatga = () => {
+  const savatga = (event) => {
+    event.preventDefault();
     const old = JSON.parse(localStorage.getItem("basket")) || [];
     const newItem = { id, image, title, price, son };
     localStorage.setItem("basket", JSON.stringify([...old, newItem]));

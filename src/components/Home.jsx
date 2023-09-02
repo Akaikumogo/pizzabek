@@ -11,7 +11,7 @@ const Home = () => {
     const totalSum = arr.reduce((sum, item) => sum + item.price * item.son, 0);
     setBasketTotal(totalSum);
   }, []);
-
+  console.log(basketTotal);
   function useQuery() {
     const { search } = useLocation();
 
@@ -41,7 +41,7 @@ const Home = () => {
         </div>
         <input className="search" type="text" placeholder="Pitsani qidirish" />
         <Link to="/korzinka" className="korzinka-button">
-          {basketTotal ? basketTotal + ",000|" : " "}savat
+          {basketTotal ? basketTotal * 1000 + " | " : " "}savat
         </Link>
       </div>
       <div className="pizzas">
