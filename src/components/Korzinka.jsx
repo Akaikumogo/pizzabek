@@ -30,7 +30,7 @@ const Korznika = () => {
         <div className="logo">
           <img src={Logo} alt="" />
         </div>
-        {items.length > 0 ? button : null}
+        {items.length > 0 ? button : "."}
       </div>
       <div className="korzinka-block">
         {items.length > 0 ? (

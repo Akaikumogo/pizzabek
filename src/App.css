@@ -188,7 +188,7 @@
   border-radius: 90%;
   margin-bottom: 10px;
   clip-path: circle(40);
-
+  border: 1px solid;  
   margin-left: -10px;
   animation: rotation 25s infinite linear;
 }
