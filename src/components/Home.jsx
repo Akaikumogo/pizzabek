@@ -37,7 +37,9 @@ const Home = () => {
     <div>
       <div className="Navbar">
         <div className="logo">
-          <img src={Logo} alt="" />
+          <a href="/">
+            <img src={Logo} alt="" />
+          </a>
         </div>
         <input className="search" type="text" placeholder="Pitsani qidirish" />
         <Link to="/korzinka" className="korzinka-button">

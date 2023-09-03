@@ -28,7 +28,9 @@ const Korznika = () => {
     <div>
       <div className="Navbar">
         <div className="logo">
-          <img src={Logo} alt="" />
+          <a href="/">
+            <img src={Logo} alt="" />
+          </a>
         </div>
         {items.length > 0 ? button : "."}
       </div>

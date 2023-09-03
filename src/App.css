@@ -189,7 +189,6 @@
   border-radius: 90%;
   margin-bottom: 10px;
   clip-path: circle(40);
-  border: 1px solid;
   margin-left: -10px;
   animation: rotation 25s infinite linear;
 }
@@ -315,7 +314,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid;
 }
 
 .products {
@@ -356,7 +354,6 @@
 .buyurtma {
   width: 30%;
   height: 400px;
-  border: 1px solid;
   padding: 20px;
 }
 .productsonblock {
