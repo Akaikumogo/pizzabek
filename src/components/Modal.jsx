@@ -1,29 +1,9 @@
-import { useState, useEffect } from "react";
-
+import { useEffect } from "react";
+import { useGlobalContext } from "../context";
 const Modal = ({ onClose, id, image, title, price, description }) => {
-  const [son, setSon] = useState(1);
-  const [basketTotal, setBasketTotal] = useState(0);
-  () => {
-    const arr = JSON.parse(localStorage.getItem("basket")) || [];
-    const totalSum = arr.reduce((sum, item) => sum + item.price * item.son, 0);
-    setBasketTotal(totalSum);
-  };
   useEffect(() => {
     basketTotal;
   }, []);
-
-  const plus = () => {
-    if (son < 10) {
-      setSon(son + 1);
-    }
-  };
-
-  const minus = () => {
-    if (son >= 2) {
-      setSon(son - 1);
-    }
-  };
-
   const savatga = (event) => {
     event.preventDefault();
     const old = JSON.parse(localStorage.getItem("basket")) || [];
@@ -36,7 +16,7 @@ const Modal = ({ onClose, id, image, title, price, description }) => {
     );
     setBasketTotal(updatedTotal);
   };
-
+  const { son, plus, minus, basketTotal } = useGlobalContext();
   return (
     <div className="modal">
       <div className="modal-content">

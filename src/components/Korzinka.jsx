@@ -1,29 +1,9 @@
 import Logo from "../img/logo.svg";
 import { useState } from "react";
-
-const Korznika = () => {
-  const items = JSON.parse(localStorage.getItem("basket"));
-  const titles = items.map((item) => item.title).join(", ");
-  const umumiy_son = items.reduce((sum, item) => sum + item.son, 0);
-  const umumiy_narx = items.reduce(
-    (sum, item) => sum + item.son * item.price * 1000,
-    0
-  );
-  const buyurtma = () => {
-    const foydalanuvchi = "Foydalanuvchi nomi"; // Foydalanuvchi nomini o'zgartiring
-    console.log(`Buyurtma berildi:
-      ${titles},
-      ${umumiy_son},
-      ${umumiy_narx},
-      ${foydalanuvchi}
-    `);
-  };
-
-  const button = (
-    <button className="korzinka-button" onClick={buyurtma}>
-      buyurtma berish
-    </button>
-  );
+import { useGlobalContext } from "../context.jsx";
+const Korzinka = () => {
+  const { items, titles, umumiy_son, umumiy_narx, buyurtma, button } =
+    useGlobalContext();
   return (
     <div>
       <div className="Navbar">
@@ -102,4 +82,4 @@ const Korznika = () => {
   );
 };
 
-export default Korznika;
+export default Korzinka;

@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import Logo from "../img/logo.svg";
 import Pizza from "./Pizza";
+import { useGlobalContext } from "../context";
 
 const Home = () => {
-  const [basketTotal, setBasketTotal] = useState(0);
-
+  const { types, updateBasketTotal, basketTotal } = useGlobalContext();
+  const location = useLocation();
+  console.log(types);
   useEffect(() => {
     const arr = JSON.parse(localStorage.getItem("basket")) || [];
     const totalSum = arr.reduce((sum, item) => sum + item.price * item.son, 0);
-    setBasketTotal(totalSum);
-  }, []);
-  console.log(basketTotal);
+    updateBasketTotal(totalSum);
+  }, [updateBasketTotal, location]);
+
   function useQuery() {
     const { search } = useLocation();
 
@@ -19,20 +21,6 @@ const Home = () => {
   }
 
   let query = useQuery();
-  const types = {
-    all: "Barchasi",
-    chees: "Pishloqli",
-    meat: "Go'shtli",
-    spicy: "Achchiq",
-    grib: "Qo'ziqorinli",
-  };
-
-  const updateBasketTotal = () => {
-    const arr = JSON.parse(localStorage.getItem("basket")) || [];
-    const totalSum = arr.reduce((sum, item) => sum + item.price * item.son, 0);
-    setBasketTotal(totalSum);
-  };
-
   return (
     <div>
       <div className="Navbar">
