@@ -442,3 +442,18 @@
   font-weight: 800;
   line-height: 17px; /* 89.474% */
 }
+
+.aboutCard {
+  width: 900px;
+  height: 500px;
+  border-radius: 50px;
+  background: #ffffff;
+  margin: 50px auto;
+  padding: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.center {
+  margin-left: 170px;
+}

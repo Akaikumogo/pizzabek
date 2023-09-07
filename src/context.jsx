@@ -90,6 +90,7 @@ const AppProvider = ({ children }) => {
 
   const closeModal = () => {
     setOpenModalId(null);
+    setSon(1);
   };
 
   const types = {
@@ -125,7 +126,7 @@ const AppProvider = ({ children }) => {
   const [son, setSon] = useState(1);
 
   const items = JSON.parse(localStorage.getItem("basket"));
-  const titles = items.map((item) => item.title).join(", ");
+  const titles = items.map((item) => item.title).join(",");
   const umumiy_son = items.reduce((sum, item) => sum + item.son, 0);
   const umumiy_narx = items.reduce(
     (sum, item) => sum + item.son * item.price * 1000,

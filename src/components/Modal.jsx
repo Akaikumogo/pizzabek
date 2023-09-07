@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "../context";
+import { Link } from "react-router-dom";
 const Modal = ({ onClose, id, image, title, price, description }) => {
   useEffect(() => {
     basketTotal;
@@ -45,6 +46,7 @@ const Modal = ({ onClose, id, image, title, price, description }) => {
               <button className="savatga" onClick={savatga}>
                 Savatga qo'shish
               </button>
+              <Link to={`/aboutpizza/${id}`}>About pizza</Link>
             </div>
           </div>
         </div>
